@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Entity Determiner</title>
+  
+  <link rel="icon" href="pict/logo_tab.png" />
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="css/bootstrap.min.css" rel="stylesheet" >
+  <link href="css/style.css" rel="stylesheet" >
+  <link href="css/font-awesome.css" rel="stylesheet">
+  <style>
+	#cariBerita {
+		background-image: url("pict/search-icon2.png");
+	}
+	</style>
+</head>
+<body style="background-color:#f7f7f7">
+<!-- Header Start -->
+<div class="navbar navbar-default navbar-fixed-top" style="padding:15px 15px 0 15px">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+    </button>
+    	
+	<a href="index.html">
+		<img style="width:250px; margin-left:30px" src="pict/logo_header.png">
+    </a>
+		
+	<div id="navbar" class="navbar-collapse collapse col-sm-1 col-sm-push-4">
+		<ul class="nav navbar-nav" style="margin-top:10px; margin-left:40px">
+			<li><a href="index.html">Headline</a></li>
+			<li><a href="berita.html">Repository</a></li>
+			<li><a href="tag.html">Tagged Word</a></li>
+			<li><a href="about.html">About</a></li>
+			<li class="tab-active"><a id="active" href="help.html">Help</a></li>
+		</ul>
+	
+		<ul class="nav navbar-nav navbar-right col-sm-5 col-sm-pull-8" style="padding-top:15px">
+			<li><input type="text" id="cariBerita" onkeyup="filter()" placeholder="Telusuri"></li>
+		</ul>
+		
+		<ul class="nav navbar-nav navbar-right col-sm-2 col-sm-push-1" style="padding-top:15px">
+			<button class="btn btn-no-border" type="button">
+				<a href="rss.html" class="link-berita"><span class="fa fa-rss"><font class="teks-btn">&nbsp;RSS</font></span></a>
+			</button>
+			<button class="btn btn-no-border" type="button">
+				<a href="help.html" class="link-berita"><span class="fa fa-info"><font class="teks-btn">&nbsp;INFO</font></span></a>
+			</button>
+			<button id="userMenu" class="btn dropdown-toggle btn-no-border" type="button" data-toggle="dropdown">
+				<span class="fa fa-user"></span>&nbsp;
+				<span class="caret userButton"></span>
+			</button>
+			
+			<ul class="dropdown-menu" role="menu" aria-labelledby="userMenu">
+				<li role="presentation"><a href="#" tabindex="-1" role="menuitem">User</a></li>
+				<li role="presentation"><a href="#" tabindex="-1" role="menuitem">Profile</a></li>
+				<li role="presentation" class="divider"></li>
+				<li role="presentation"><a href="#" tabindex="-1" role="menuitem">Logout</a></li>
+			</ul>
+		</ul>
+	</div>
+ </div>
+<!-- Header End -->
+  
+<!-- Content Start -->
+<div class="container-fluid" style="margin-top:110px; margin-right:10px">
+	<div class="row">
+		<!-- Kolom Kiri -->
+		<div class="col-sm-2" style="position:relative; margin-top:23px">
+			<div class="sidebar">
+				<h5 style="color:#777; margin-left:20px">SUB-MENU</h5>
+					<a href="index.html"><button class="btn-sidenav"><i class="fa fa-bullhorn" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Berita Terbaru</font></i></button></a>
+					<br>
+					<a href="berita.html"><button class="btn-sidenav"><i class="fa fa-database" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Repository Berita</font></i></button></a>
+					<br>
+					<a href="link.html"><button class="btn-sidenav"><i class="fa fa-link" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Repository Sumber</font></i></button></a>
+					<br>
+					<a href="tag.html"><button class="btn-sidenav"><i class="fa fa-tag" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Tagged Word</font></i></button></a>
+					<br>
+					
+					<hr style="border-top: 3px solid #ccc; width:85%">
+					<a href="about.html"><button class="btn-sidenav"><i class="fa fa-user" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Tentang Kami</font></i></button></a>
+					<br>
+					<a href="help.html"><button class="btn-sidenav" style="background-color:#eeeeee"><i class="fa fa-info" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp;&nbsp;&nbsp; Pusat Bantuan</font></i></button>
+					</a>
+					
+					<hr style="border-top: 3px solid #ccc; width:85%">
+					<a href="rss.html"><button class="btn-sidenav"><i class="fa fa-rss" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp;&nbsp; RSS</font></i></button></a>
+					<br>
+					<a href="feedback.html"><button class="btn-sidenav"><i class="fa fa-envelope" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Feedback</font></i></button>
+					</a>	
+			</div>
+		</div>
+		<!-- Kolom Kiri -->
+		
+		<!-- Kolom Kanan -->
+		<div class="col-sm-10">
+			<h3 style="color:#000">&nbsp;&nbsp; Panduan Pengguna</h3>
+				<div class="panel-body box-panel" style="padding:30px">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading" style="background-color:#fff">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+										<h4>Cara Mendapatkan Entitas Berita</h4>
+									</a>
+								</h4>
+							</div>
+							<div id="collapse1" class="panel-collapse collapse in">
+								<div class="panel-body">
+									1. Pada halaman utama, pilih berita pada kolom "Headline". Jika pilihan berita kosong, tekan tombol "<i class="fa fa-refresh"></i> Reload" yang terdapat
+										di bagian atas kolom.
+									</br>2. Setelah memilih berita, anda akan langsung menuju ke halaman selanjutnya.
+									</br>3. Tekan tombol "Kembali" atau pilih berita di kolom "Berita lainya" untuk memilih berita lain.
+								</div>
+							</div>
+						</div>
+						
+						<div class="panel panel-default">
+							<div class="panel-heading" style="background-color:#fff">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+										<h4>Penjelasan Halaman</h4>
+									</a>
+								</h4>
+							</div>
+							<div id="collapse2" class="panel-collapse collapse">
+								<div class="panel-body">
+									<a href="index.html">1. Headline :</a>
+									</br>&nbsp;&nbsp;&nbsp;&nbsp;- Berisi semua berita terbaru dari Google News Indonesia.
+									</br>&nbsp;&nbsp;&nbsp;&nbsp;- Anda dapat mencari berita yang anda inginkan pada kolom pencarian.
+									</br>&nbsp;&nbsp;&nbsp;&nbsp;- Terdapat kalender di bagian kanan halaman.
+									</br><a href="berita.html">2. Repository Berita :</a>
+									</br>&nbsp;&nbsp;&nbsp;&nbsp;- Berisi semua berita, yang tersimpan di database.
+									</br>&nbsp;&nbsp;&nbsp;&nbsp;- Anda dapat mencari berita yang anda inginkan pada kolom pencarian.
+									</br>&nbsp;&nbsp;&nbsp;&nbsp;- Anda dapat mengurutkan berita berdasar abjad, dengan menekan tombol "Sort".
+									</br><a href="link.html">3. Repository Link :</a>
+									</br>&nbsp;&nbsp;&nbsp;&nbsp;- Berisi link-link berita yang telah di scraping, dan tersimpan di database.
+									</br>&nbsp;&nbsp;&nbsp;&nbsp;- Anda dapat mencari link berita yang anda inginkan pada kolom pencarian.
+									</br>&nbsp;&nbsp;&nbsp;&nbsp;- Anda dapat mengurutkan link berita berdasar abjad, dengan menekan tombol "Sort".
+									</br><a href="tag.html">4. Taged Word :</a>
+									</br>&nbsp;&nbsp;&nbsp;&nbsp;- Berisi sekumpulan kata yang telah di TAG, sebagai acuan dalam proses POS Tagging.
+									</br>&nbsp;&nbsp;&nbsp;&nbsp;- Anda dapat mencari kata yang anda inginkan pada kolom pencarian.
+									</br>&nbsp;&nbsp;&nbsp;&nbsp;- Anda dapat mengurutkan berita berdasar abjad, dengan menekan header tabel.
+									</br><a href="about.html">5. About :</a>
+									</br>&nbsp;&nbsp;&nbsp;&nbsp;- Berisi penjelasan singkat tentang <a href="index.html">Entity Determiner</a>
+									</br><a href="help.html">6. Help :</a>
+									</br>&nbsp;&nbsp;&nbsp;&nbsp;- Berisi sekumpulan panduang untuk pengguna <a href="index.html">Entity Determiner</a>
+								</div>
+							</div>
+						</div>
+						
+						<div class="panel panel-default">
+							<div class="panel-heading" style="background-color:#fff">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+										<h4>Kritik dan Saran</h4>
+									</a>
+								</h4>
+							</div>
+							<div id="collapse3" class="panel-collapse collapse">
+								<div class="panel-body">
+									Untuk kritik dan saran, silahkan kirim via email ke : <a href="mailto:zhiezzpct@gmail.com">zhiezzpct@gmail.com</a>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+			<!-- Footer Start -->
+			<div class="box" style="margin-top:40px;text-align:center">
+				<p>
+					<a href="index.html">Headline</a> -
+					<a href="berita.html">Repository</a> -
+					<a href="tag.html">Tagged Word</a> -
+					<a href="about.html">About</a> -
+					<a href="help.html">Help</a>
+				</p>
+			</div>
+			<div class="box" style="text-align:center">
+					<p style="color:#777"><b>Entity Determiner</b> by Husain Abdul Aziz 
+					<br>Universitas AMIKOM Yogyakarta<br>
+					<a href="mailto:zhiezzpct@gmail.com"><i class="fa fa-envelope"></i>&nbsp;&nbspContact Me</a></p>
+			</div>
+			<!-- Footer End -->	
+		</div>
+		<!-- Kolom Kanan -->
+	</div>
+</div>
+
+<!-- Need -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Need -->
+</body>
+</html>

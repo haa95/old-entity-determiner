@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Entity Determiner</title>
+  
+  <link rel="icon" href="pict/logo_tab.png" />
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="css/bootstrap.min.css" rel="stylesheet" >
+  <link href="css/style.css" rel="stylesheet" >
+  <link href="css/font-awesome.css" rel="stylesheet">
+  <style>
+	#cariBerita {
+		background-image: url("pict/search-icon2.png");
+	}
+	#cariBerita {
+		background-image: url("pict/search-icon2.png");
+	}
+	</style>
+</head>
+<body style="background-color:#f7f7f7">
+<button class="btn btn-default move-top" href="#" id="myBtn" title="Go to top">Kembali ke atas &nbsp;&nbsp;<i class="fa fa-arrow-up"></i></button>
+<!-- Header Start -->
+<div class="navbar navbar-default navbar-fixed-top" style="padding:15px 15px 0 15px">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+    </button>
+    	
+	<a href="index.html">
+		<img style="width:250px; margin-left:30px" src="pict/logo_header.png">
+    </a>
+		
+	<div id="navbar" class="navbar-collapse collapse col-sm-1 col-sm-push-4">
+		<ul class="nav navbar-nav" style="margin-top:10px; margin-left:40px">
+			<li><a href="index.html">Headline</a></li>
+			<li><a href="berita.html">Repository</a></li>
+			<li class="tab-active"><a id="active" href="tag.html">Tagged Word</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="help.html">Help</a></li>
+		</ul>
+	
+		<ul class="nav navbar-nav navbar-right col-sm-5 col-sm-pull-8" style="padding-top:15px">
+			<li><input type="text" id="cariBerita" onkeyup="filterBerita()" placeholder="Telusuri"></li>
+		</ul>
+		
+		<ul class="nav navbar-nav navbar-right col-sm-2 col-sm-push-1" style="padding-top:15px">
+			<button class="btn btn-no-border" type="button">
+				<a href="rss.html" class="link-berita"><span class="fa fa-rss"><font class="teks-btn">&nbsp;RSS</font></span></a>
+			</button>
+			<button class="btn btn-no-border" type="button">
+				<a href="help.html" class="link-berita"><span class="fa fa-info"><font class="teks-btn">&nbsp;INFO</font></span></a>
+			</button>
+			<button id="userMenu" class="btn dropdown-toggle btn-no-border" type="button" data-toggle="dropdown">
+				<span class="fa fa-user"></span>&nbsp;
+				<span class="caret userButton"></span>
+			</button>
+			
+			<ul class="dropdown-menu" role="menu" aria-labelledby="userMenu">
+				<li role="presentation"><a href="#" tabindex="-1" role="menuitem">User</a></li>
+				<li role="presentation"><a href="#" tabindex="-1" role="menuitem">Profile</a></li>
+				<li role="presentation" class="divider"></li>
+				<li role="presentation"><a href="#" tabindex="-1" role="menuitem">Logout</a></li>
+			</ul>
+		</ul>
+	</div>
+ </div>
+<!-- Header End -->
+  
+<!-- Content Start -->
+<div class="container-fluid" style="margin-top:110px; margin-right:40px">
+	<div class="row">
+		<!-- Kolom Kiri -->
+		<div class="col-sm-2" style="position:relative; margin-top:23px">
+			<div class="sidebar">
+				<h5 style="color:#777; margin-left:20px">SUB-MENU</h5>
+					<a href="index.html"><button class="btn-sidenav"><i class="fa fa-bullhorn" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Berita Terbaru</font></i></button></a>
+					<br>
+					<a href="berita.html"><button class="btn-sidenav"><i class="fa fa-database" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Repository Berita</font></i></button></a>
+					<br>
+					<a href="link.html"><button class="btn-sidenav"><i class="fa fa-link" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Repository Sumber</font></i></button></a>
+					<br>
+					<a href="tag.html"><button class="btn-sidenav" style="background-color:#eeeeee"><i class="fa fa-tag" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Tagged Word</font></i></button></a>
+					<br>
+					
+					<hr style="border-top: 3px solid #ccc; width:85%">
+					<a href="about.html"><button class="btn-sidenav"><i class="fa fa-user" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Tentang Kami</font></i></button></a>
+					<br>
+					<a href="help.html"><button class="btn-sidenav"><i class="fa fa-info" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp;&nbsp;&nbsp; Pusat Bantuan</font></i></button>
+					</a>
+					
+					<hr style="border-top: 3px solid #ccc; width:85%">
+					<a href="rss.html"><button class="btn-sidenav"><i class="fa fa-rss" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp;&nbsp; RSS</font></i></button></a>
+					<br>
+					<a href="feedback.html"><button class="btn-sidenav"><i class="fa fa-envelope" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Feedback</font></i></button>
+					</a>			
+			</div>
+		</div>
+		<!-- Kolom Kiri -->
+	
+		<!-- Kolom Tengah -->
+		<div class="col-sm-7">
+			<h3 style="color:#000">&nbsp;&nbsp; Tagged Word</h3>
+			<div class="panel-body box-panel">
+					<table id="tableTag" class="table table-hover">
+						<thead>
+						  <tr>
+							<th onclick="sorting(0)">Kata</th>
+							<th onclick="sorting(2)">Tag</th>
+							<th>Keterangan</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td>Kera</td>
+							<td>/NN</td>
+							<td>Kata benda</td>
+						  </tr>
+						  <tr>
+							<td>untuk</td>
+							<td>/SC</td>
+							<td>Kata sambung</td>
+						  </tr>
+						  <tr>
+							<td>amankan</td>
+							<td>/VB</td>
+							<td>Kata kerja</td>
+						  </tr>
+						  <tr>
+							<td>pemerintah</td>
+							<td>/NNP</td>
+							<td>Kata benda spesifik</td>
+						  </tr>
+						  <tr>
+							<td>pesta olahraga</td>
+							<td>/NN</td>
+							<td>Kata benda</td>
+						  </tr>
+						  <tr>
+							<td>.</td>
+							<td>/Z</td>
+							<td>Tanda Baca</td>
+						  </tr>
+						  <tr>
+							<td>Kera</td>
+							<td>/NN</td>
+							<td>Kata benda</td>
+						  </tr>
+						  <tr>
+							<td>untuk</td>
+							<td>/SC</td>
+							<td>Kata sambung</td>
+						  </tr>
+						  <tr>
+							<td>amankan</td>
+							<td>/VB</td>
+							<td>Kata kerja</td>
+						  </tr>
+						  <tr>
+							<td>pemerintah</td>
+							<td>/NNP</td>
+							<td>Kata benda spesifik</td>
+						  </tr>
+						  <tr>
+							<td>pesta olahraga</td>
+							<td>/NN</td>
+							<td>Kata benda</td>
+						  </tr>
+						  <tr>
+							<td>.</td>
+							<td>/Z</td>
+							<td>Tanda Baca</td>
+						  </tr>
+						</tbody>
+					</table>
+			</div>
+			
+			<!-- Footer Start -->
+			<div class="box" style="margin-top:40px;text-align:center">
+				<p>
+				<a href="index.html">Headline</a> -
+				<a href="berita.html">Repository</a> -
+				<a href="tag.html">Tagged Word</a> -
+				<a href="about.html">About</a> -
+				<a href="help.html">Help</a>
+				</p>
+			</div>
+			<div class="box" style="text-align:center">
+				<p style="color:#777"><b>Entity Determiner</b> by Husain Abdul Aziz 
+				<br>Universitas AMIKOM Yogyakarta<br>
+				<a href="mailto:zhiezzpct@gmail.com"><i class="fa fa-envelope"></i>&nbsp;&nbspContact Me</a></p>
+			</div>
+			<!-- Footer End -->	
+		</div>
+		<!-- Kolom Tengah -->
+		
+		<!-- Kolom Kanan -->
+		<div class="col-sm-3" style="margin-top:18px; padding 20px">
+			<div class="sidebar">
+				<h4 style="color:#000">&nbsp;&nbsp; Pencarian</h4>
+				<div class="panel-body box-panel" style="width:125%">	
+					<input type="text" id="cariLink" onkeyup="filter()" placeholder="Search ..">
+				</div>
+			</div>
+		</div>
+		<!-- Kolom Kanan -->
+	</div>
+</div>
+
+<!-- Need -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+	function filter() {
+	  var input, filter, table, tr, td, i;
+	  input = document.getElementById("cariLink");
+	  filter = input.value.toUpperCase();
+	  table = document.getElementById("tableTag");
+	  tr = table.getElementsByTagName("tr");
+
+	  for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[0];
+		if (td) {
+		  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+			tr[i].style.display = "";
+		  } else {
+			tr[i].style.display = "none";
+		  }
+		} 
+	  }
+	}
+	
+	function sorting(n) {
+	  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+	  table = document.getElementById("tableTag");
+	  switching = true;
+	  //Set the sorting direction to ascending:
+	  dir = "asc"; 
+	  /*Make a loop that will continue until
+	  no switching has been done:*/
+	  while (switching) {
+		//start by saying: no switching is done:
+		switching = false;
+		rows = table.getElementsByTagName("TR");
+		/*Loop through all table rows (except the
+		first, which contains table headers):*/
+		for (i = 1; i < (rows.length - 1); i++) {
+		  //start by saying there should be no switching:
+		  shouldSwitch = false;
+		  /*Get the two elements you want to compare,
+		  one from current row and one from the next:*/
+		  x = rows[i].getElementsByTagName("TD")[n];
+		  y = rows[i + 1].getElementsByTagName("TD")[n];
+		  /*check if the two rows should switch place,
+		  based on the direction, asc or desc:*/
+		  if (dir == "asc") {
+			if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+			  //if so, mark as a switch and break the loop:
+			  shouldSwitch= true;
+			  break;
+			}
+		  } else if (dir == "desc") {
+			if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+			  //if so, mark as a switch and break the loop:
+			  shouldSwitch= true;
+			  break;
+			}
+		  }
+		}
+		if (shouldSwitch) {
+		  /*If a switch has been marked, make the switch
+		  and mark that a switch has been done:*/
+		  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+		  switching = true;
+		  //Each time a switch is done, increase this count by 1:
+		  switchcount ++; 
+		} else {
+		  /*If no switching has been done AND the direction is "asc",
+		  set the direction to "desc" and run the while loop again.*/
+		  if (switchcount == 0 && dir == "asc") {
+			dir = "desc";
+			switching = true;
+		  }
+		}
+	  }
+	}
+	</script>
+	
+	<script>
+	$(document).ready(function() {
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 500) {
+				$('.move-top').fadeIn();
+			} else {
+				$('.move-top').fadeOut();
+			}
+		});
+
+		$('.move-top').click(function() {
+			$("html, body").animate({
+				scrollTop: 0
+			}, 600);
+		return false;
+		});
+	});
+	</script>
+<!-- Need -->
+</body>
+</html>

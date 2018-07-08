@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Entity Determiner</title>
+  
+	<link rel="icon" href="pict/logo_tab.png" />
+  
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" >
+	<style>
+	#cariBerita {
+		background-image: url("pict/search-icon2.png");
+	}
+	</style>
+</head>
+<body style="background-color:#f7f7f7">
+<button class="btn btn-default move-top" href="#" id="myBtn" title="Go to top">Kembali ke atas &nbsp;&nbsp;<i class="fa fa-arrow-up"></i></button>
+<!-- Header Start -->
+<div class="navbar navbar-default navbar-fixed-top" style="padding:15px 15px 0 15px">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+    </button>
+    	
+	<a href="index.html">
+		<img style="width:250px; margin-left:30px" src="pict/logo_header.png">
+    </a>
+		
+	<div id="navbar" class="navbar-collapse collapse col-sm-1 col-sm-push-4">
+		<ul class="nav navbar-nav" style="margin-top:10px; margin-left:40px">
+			<li class="tab-active"><a id="active" href="index.html">Headline</a></li>
+			<li><a href="berita.html">Repository</a></li>
+			<li><a href="tag.html">Tagged Word</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="help.html">Help</a></li>
+		</ul>
+	
+		<ul class="nav navbar-nav navbar-right col-sm-5 col-sm-pull-8" style="padding-top:15px">
+			<li><input type="text" id="cariBerita" onkeyup="filter()" placeholder="Telusuri"></li>
+		</ul>
+		
+		<ul class="nav navbar-nav navbar-right col-sm-2 col-sm-push-1" style="padding-top:15px">
+			<button class="btn btn-no-border" type="button">
+				<a href="rss.html" class="link-berita"><span class="fa fa-rss"><font class="teks-btn">&nbsp;RSS</font></span></a>
+			</button>
+			<button class="btn btn-no-border" type="button">
+				<a href="help.html" class="link-berita"><span class="fa fa-info"><font class="teks-btn">&nbsp;INFO</font></span></a>
+			</button>
+			<button id="userMenu" class="btn dropdown-toggle btn-no-border" type="button" data-toggle="dropdown">
+				<span class="fa fa-user"></span>&nbsp;
+				<span class="caret userButton"></span>
+			</button>
+			
+			<ul class="dropdown-menu" role="menu" aria-labelledby="userMenu">
+				<li role="presentation"><a href="#" tabindex="-1" role="menuitem">User</a></li>
+				<li role="presentation"><a href="#" tabindex="-1" role="menuitem">Profile</a></li>
+				<li role="presentation" class="divider"></li>
+				<li role="presentation"><a href="#" tabindex="-1" role="menuitem">Logout</a></li>
+			</ul>
+		</ul>
+	</div>
+ </div>
+<!-- Header End -->
+
+<!-- Content Start -->
+<div class="container-fluid" style="margin-top:110px; margin-right:10px">
+	<div class="row">
+		<!-- Kolom Kiri -->
+		<div class="col-sm-2" style="position:relative; margin-top:23px">
+			<div class="sidebar">
+				<h5 style="color:#777; margin-left:20px">SUB-MENU</h5>
+					<a href="index.html"><button class="btn-sidenav" style="background-color:#eeeeee"><i class="fa fa-bullhorn" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Berita Terbaru</font></i></button></a>
+					<br>
+					<a href="berita.html"><button class="btn-sidenav"><i class="fa fa-database" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Repository Berita</font></i></button></a>
+					<br>
+					<a href="link.html"><button class="btn-sidenav"><i class="fa fa-link" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Repository Sumber</font></i></button></a>
+					<br>
+					<a href="tag.html"><button class="btn-sidenav"><i class="fa fa-tag" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Tagged Word</font></i></button></a>
+					<br>
+					
+					<hr style="border-top: 3px solid #ccc; width:85%">
+					<a href="about.html"><button class="btn-sidenav"><i class="fa fa-user" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Tentang Kami</font></i></button></a>
+					<br>
+					<a href="help.html"><button class="btn-sidenav"><i class="fa fa-info" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp;&nbsp;&nbsp; Pusat Bantuan</font></i></button>
+					</a>
+					
+					<hr style="border-top: 3px solid #ccc; width:85%">
+					<a href="rss.html"><button class="btn-sidenav"><i class="fa fa-rss" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp;&nbsp; RSS</font></i></button></a>
+					<br>
+					<a href="feedback.html"><button class="btn-sidenav"><i class="fa fa-envelope" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Feedback</font></i></button>
+					</a>
+			</div>
+		</div>
+		<!-- Kolom Kiri -->
+		
+		<!-- Kolom Tengah -->
+		<div class="col-sm-7">
+			<h3 style="color:#000">&nbsp;&nbsp; Berita Terbaru
+			<p style="float:right">
+				<font size="3px">
+					<a href="index.html">	
+					<i class="fa fa-refresh link-berita" style="color:#3b78e7"></i>
+						Reload
+					</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</font>
+			</p>
+			</h3>
+
+			<ul id="berita">
+				<li style="margin-bottom:20px">
+					<div class="panel-body box-panel">
+						<h4><a href="result.html" class="judul-berita">Ngamuk Diminta Copot Jam Tangan, Ibu Ini Tampar Petugas Bandara Manado</a></h4>	
+						<p>Seorang calon penumpang wanita mengamuk saat diminta mencopot jam tangan miliknya 
+							saat melalui mesin X-ray di Bandara Sam Ratulangi, Manado. Padahal petugas Aviation 
+							Security Sam Ratulangi sudah memberikan ...</p>
+					</div>	
+				</li>
+						
+				<li style="margin-bottom:20px">
+					<div class="panel-body box-panel">
+						<h4><a href="result.html" class="judul-berita">Wacana Pemindahan Ibu Kota, Kementerian PUPR Tunggu Kajian Bappenas</a></h4>	
+						<p>Seorang calon penumpang wanita mengamuk saat diminta mencopot jam tangan miliknya 
+							saat melalui mesin X-ray di Bandara Sam Ratulangi, Manado. Padahal petugas Aviation 
+							Security Sam Ratulangi sudah memberikan ...</p>
+					</div>
+				</li>
+					
+				<li style="margin-bottom:20px">
+					<div class="panel-body box-panel">
+						<h4><a href="result.html" class="judul-berita">Nekat Jambret Motor Tentara Kopaska, Dua Pencuri Tewas Didor</a></h4>	
+						<p>Seorang calon penumpang wanita mengamuk saat diminta mencopot jam tangan miliknya 
+							saat melalui mesin X-ray di Bandara Sam Ratulangi, Manado. Padahal petugas Aviation 
+							Security Sam Ratulangi sudah memberikan ...</p>
+					</div>
+				</li>
+				
+				<li style="margin-bottom:20px">
+					<div class="panel-body box-panel">
+						<h4><a href="result.html" class="judul-berita">Ngamuk Diminta Copot Jam Tangan, Ibu Ini Tampar Petugas Bandara Manado</a></h4>	
+						<p>Seorang calon penumpang wanita mengamuk saat diminta mencopot jam tangan miliknya 
+							saat melalui mesin X-ray di Bandara Sam Ratulangi, Manado. Padahal petugas Aviation 
+							Security Sam Ratulangi sudah memberikan ...</p>
+					</div>	
+				</li>
+						
+				<li style="margin-bottom:20px">
+					<div class="panel-body box-panel">
+						<h4><a href="result.html" class="judul-berita">Wacana Pemindahan Ibu Kota, Kementerian PUPR Tunggu Kajian Bappenas</a></h4>	
+						<p>Seorang calon penumpang wanita mengamuk saat diminta mencopot jam tangan miliknya 
+							saat melalui mesin X-ray di Bandara Sam Ratulangi, Manado. Padahal petugas Aviation 
+							Security Sam Ratulangi sudah memberikan ...</p>
+					</div>
+				</li>
+					
+				<li style="margin-bottom:20px">
+					<div class="panel-body box-panel">
+						<h4><a href="result.html" class="judul-berita">Nekat Jambret Motor Tentara Kopaska, Dua Pencuri Tewas Didor</a></h4>	
+						<p>Seorang calon penumpang wanita mengamuk saat diminta mencopot jam tangan miliknya 
+							saat melalui mesin X-ray di Bandara Sam Ratulangi, Manado. Padahal petugas Aviation 
+							Security Sam Ratulangi sudah memberikan ...</p>
+					</div>
+				</li>
+				
+				<li style="margin-bottom:20px">
+					<div class="panel-body box-panel">
+						<h4><a href="result.html" class="judul-berita">Ngamuk Diminta Copot Jam Tangan, Ibu Ini Tampar Petugas Bandara Manado</a></h4>	
+						<p>Seorang calon penumpang wanita mengamuk saat diminta mencopot jam tangan miliknya 
+							saat melalui mesin X-ray di Bandara Sam Ratulangi, Manado. Padahal petugas Aviation 
+							Security Sam Ratulangi sudah memberikan ...</p>
+					</div>	
+				</li>
+						
+				<li style="margin-bottom:20px">
+					<div class="panel-body box-panel">
+						<h4><a href="result.html" class="judul-berita">Wacana Pemindahan Ibu Kota, Kementerian PUPR Tunggu Kajian Bappenas</a></h4>	
+						<p>Seorang calon penumpang wanita mengamuk saat diminta mencopot jam tangan miliknya 
+							saat melalui mesin X-ray di Bandara Sam Ratulangi, Manado. Padahal petugas Aviation 
+							Security Sam Ratulangi sudah memberikan ...</p>
+					</div>
+				</li>
+					
+				<li style="margin-bottom:20px">
+					<div class="panel-body box-panel">
+						<h4><a href="result.html" class="judul-berita">Nekat Jambret Motor Tentara Kopaska, Dua Pencuri Tewas Didor</a></h4>	
+						<p>Seorang calon penumpang wanita mengamuk saat diminta mencopot jam tangan miliknya 
+							saat melalui mesin X-ray di Bandara Sam Ratulangi, Manado. Padahal petugas Aviation 
+							Security Sam Ratulangi sudah memberikan ...</p>
+					</div>
+				</li>
+				
+				<li style="margin-bottom:20px">
+					<div class="panel-body box-panel">
+						<h4><a href="result.html" class="judul-berita">Ngamuk Diminta Copot Jam Tangan, Ibu Ini Tampar Petugas Bandara Manado</a></h4>	
+						<p>Seorang calon penumpang wanita mengamuk saat diminta mencopot jam tangan miliknya 
+							saat melalui mesin X-ray di Bandara Sam Ratulangi, Manado. Padahal petugas Aviation 
+							Security Sam Ratulangi sudah memberikan ...</p>
+					</div>	
+				</li>
+						
+				<li style="margin-bottom:20px">
+					<div class="panel-body box-panel">
+						<h4><a href="result.html" class="judul-berita">Wacana Pemindahan Ibu Kota, Kementerian PUPR Tunggu Kajian Bappenas</a></h4>	
+						<p>Seorang calon penumpang wanita mengamuk saat diminta mencopot jam tangan miliknya 
+							saat melalui mesin X-ray di Bandara Sam Ratulangi, Manado. Padahal petugas Aviation 
+							Security Sam Ratulangi sudah memberikan ...</p>
+					</div>
+				</li>
+					
+				<li style="margin-bottom:20px">
+					<div class="panel-body box-panel">
+						<h4><a href="result.html" class="judul-berita">Nekat Jambret Motor Tentara Kopaska, Dua Pencuri Tewas Didor</a></h4>	
+						<p>Seorang calon penumpang wanita mengamuk saat diminta mencopot jam tangan miliknya 
+							saat melalui mesin X-ray di Bandara Sam Ratulangi, Manado. Padahal petugas Aviation 
+							Security Sam Ratulangi sudah memberikan ...</p>
+					</div>
+				</li>
+			</ul>
+			<h5><a href="berita.html" class="link-berita">&nbsp;&nbsp;&nbsp;Lihat berita lainya .. </a></h5>
+			
+			<!-- Footer Start -->
+			<div class="box" style="text-align:center; margin-top:40px">
+				<p>
+					<a href="index.html">Headline</a> -
+					<a href="berita.html">Repository</a> -
+					<a href="tag.html">Tagged Word</a> -
+					<a href="about.html">About</a> -
+					<a href="help.html">Help</a>
+				</p>
+			</div>
+			<div class="box" style="text-align:center">
+					<p style="color:#777"><b>Entity Determiner</b> by Husain Abdul Aziz 
+					<br>Universitas AMIKOM Yogyakarta<br>
+					<a href="mailto:zhiezzpct@gmail.com"><i class="fa fa-envelope"></i>&nbsp;&nbspContact Me</a></p>
+			</div>
+			<!-- Footer End -->	
+		</div>
+		<!-- Kolom Tengah -->
+		
+		<!-- Kolom Kanan -->
+		<div class="col-sm-3" style="margin-top:18px">
+			<h4 style="color:#000">&nbsp;&nbsp; Repository</h4>
+				<div class="panel-body box-panel" style="align:justify; padding:20px 30px 20px 30px">
+					<a href="berita.html" class="link-entity">
+						Nekat Jambret Motor Tentara Kopaska, Dua Pencuri Tewas Didor
+					</a>,&nbsp;
+					<a href="berita.html" class="link-entity">
+						Ngamuk Diminta Copot Jam Tangan, Ibu Ini Tampar Petugas Bandara Manado
+					</a>,&nbsp;
+					<a href="berita.html" class="link-entity">
+						Wacana Pemindahan Ibu Kota, Kementerian PUPR Tunggu Kajian Bappenas
+					</a>,&nbsp;
+					<a href="berita.html" class="link-entity">
+						Nekat Jambret Motor Tentara Kopaska, Dua Pencuri Tewas Didor
+					</a>,&nbsp;
+					<a href="berita.html" class="link-entity">
+						Ngamuk Diminta Copot Jam Tangan, Ibu Ini Tampar Petugas Bandara Manado
+					</a>,&nbsp;
+					<a href="berita.html" class="link-entity">
+						Wacana Pemindahan Ibu Kota, Kementerian PUPR Tunggu Kajian Bappenas
+					</a>,&nbsp;
+					<a href="berita.html" class="link-berita">
+						Muat berita lainya ..
+					</a>
+				</div>
+			
+			<br>
+			<h4 style="color:#000">&nbsp;&nbsp; Kalender</h4>
+				<div class="panel-body box-panel" style="padding:20px">
+					<center>
+						<script language="javascript" type="text/javascript">
+						var day_of_week = new Array('Min','Sen','Sel','Rab','Kam','Jum','Sab');
+						var month_of_year = new Array('Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember');
+
+						// Declare
+						var Calendar = new Date();
+
+						var year = Calendar.getFullYear();
+						var month = Calendar.getMonth();
+						var today = Calendar.getDate();
+						var weekday = Calendar.getDay();
+
+						var DAYS_OF_WEEK = 7;
+						var DAYS_OF_MONTH = 31;
+						var cal;
+
+						Calendar.setDate(1);
+						Calendar.setMonth(month);
+
+						var TR_start = '<TR>';
+						var TR_end = '</TR>';
+						var highlight_start = '<TD WIDTH="30"><TABLE CELLSPACING=0 BORDER=1 BGCOLOR=DEDEFF BORDERCOLOR=CCCCCC><TR><TD WIDTH=20><B><CENTER><font color="#3b78e7">';
+						var highlight_end   = '</font></CENTER></TD></TR></TABLE></B>';
+						var TD_start = '<TD WIDTH="30"><CENTER>';
+						var TD_end = '</CENTER></TD>';
+
+						cal =  '<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=0 BORDERCOLOR=BBBBBB><TR><TD>';
+						cal += '<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=2>' + TR_start;
+						cal += '<TD COLSPAN="' + DAYS_OF_WEEK + '" BGCOLOR="#EFEFEF"><CENTER><B><font color="#3b78e7">';
+						cal += month_of_year[month]  + '   ' + year + '</font></B>' + TD_end + TR_end;
+						cal += TR_start;
+
+						// Loop hari per minggu
+						for(index=0; index < DAYS_OF_WEEK; index++)
+						{
+							// Bold hari ini
+							if(weekday == index)
+							cal += TD_start + '<B><font color="#3b78e7">' + day_of_week[index] + '</font></B>' + TD_end;
+
+							// Print Day
+							else
+							cal += TD_start + day_of_week[index] + TD_end;
+						}
+
+						cal += TD_end + TR_end;
+						cal += TR_start;
+
+						// Isi jarak antar hari -> hari ini
+						for(index=0; index < Calendar.getDay(); index++)
+						cal += TD_start + '  ' + TD_end;
+
+						// Looping tiap hari
+						for(index=0; index < DAYS_OF_MONTH; index++)
+						{
+						if( Calendar.getDate() > index )
+						{
+							// Return hari berikutnya
+							week_day =Calendar.getDay();
+
+							// Start row baru, hari pertama
+							if(week_day == 0)
+							cal += TR_start;
+
+							if(week_day != DAYS_OF_WEEK)
+							{
+								var day  = Calendar.getDate();
+
+								// Tanggal hari ini
+								if( today==Calendar.getDate() )
+								cal += highlight_start + day + highlight_end + TD_end;
+
+							//Print Day
+							else
+								cal += TD_start + day + TD_end;
+							}
+							
+							// Batas akhir hari dalam seminggu
+							if(week_day == DAYS_OF_WEEK)
+							cal += TR_end;
+							}
+							// Increment
+							Calendar.setDate(Calendar.getDate()+1);
+						}
+						
+						cal += '</TD></TR></TABLE></TABLE>';
+						document.write(cal);
+						</script>
+					</center>
+				</div>
+				
+			<br>
+			<h4 style="color:#000">&nbsp;&nbsp; Sumber</h4>
+				<div class="panel-body box-panel">
+					<br>
+					<a href="https://news.google.com/news/?ned=id_id&hl=id" target="_blank">
+						<img src="pict/logo_google_news.png" style="max-width:100%">
+					</a>
+					<hr>
+					<a href="https://www.kompas.com/" class="link-berita" target="_blank">KOMPAS.COM</a>,
+					<a href="https://www.tribunnews.com/" class="link-berita" target="_blank">Tribunnews.com</a>,
+					<a href="https://www.cnnindonesia.com/" class="link-berita" target="_blank">CNN Indonesia</a>,
+					<a href="https://www.voaindonesia.com/" class="link-berita" target="_blank">VOA Indonesia</a>,
+					<a href="https://oketekno.com/" class="link-berita" target="_blank">OKEtekno.com</a>
+					<a href="https://news.viva.co.id/" class="link-berita" target="_blank">VIVA.co.id</a>,
+					<a href="https://www.bisnis.com/" class="link-berita" target="_blank">Bisnis.com</a>,
+					<a href="https://www.liputan6.com/" class="link-berita" target="_blank">Liputan6.com</a>,
+					<a href="https://www.tempo.co/" class="link-berita" target="_blank">TEMPO.CO</a>,
+				</div>
+		</div>
+		<!-- Kolom Kanan -->
+	</div>
+	
+</div>
+<!-- Content End -->
+
+
+
+<!-- Need -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+	function filter() {
+		var input, filter, ul, li, a, i;
+		input = document.getElementById('cariBerita');
+		filter = input.value.toUpperCase();
+		ul = document.getElementById("berita");
+		li = ul.getElementsByTagName('li');
+
+		for (i = 0; i < li.length; i++) {
+			a = li[i].getElementsByTagName("a")[0];
+			if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+				li[i].style.display = "";
+			} else {
+				li[i].style.display = "none";
+			}
+		}
+	}
+	
+	function myFunction() {
+		document.getElementById("myDropdown").classList.toggle("show");
+	}
+
+	window.onclick = function(event) {
+	  if (!event.target.matches('.dropbtn')) {
+
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+		  var openDropdown = dropdowns[i];
+		  if (openDropdown.classList.contains('show')) {
+			openDropdown.classList.remove('show');
+		  }
+		}
+	  }
+	}
+	</script>
+	
+	<script>
+	$(document).ready(function() {
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 500) {
+				$('.move-top').fadeIn();
+			} else {
+				$('.move-top').fadeOut();
+			}
+		});
+
+		$('.move-top').click(function() {
+			$("html, body").animate({
+				scrollTop: 0
+			}, 600);
+		return false;
+		});
+	});
+	</script>
+<!-- Need -->
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Entity Determiner</title>
+  
+	<link rel="icon" href="pict/logo_tab.png" />
+  
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" >
+	<style>
+	#cariBerita {
+		background-image: url("pict/search-icon2.png");
+	}
+	</style>
+</head>
+<body style="background-color:#f7f7f7">
+<button class="btn btn-default move-top" href="#" id="myBtn" title="Go to top">Kembali ke atas &nbsp;&nbsp;<i class="fa fa-arrow-up"></i></button>
+<!-- Header Start -->
+<div class="navbar navbar-default navbar-fixed-top" style="padding:15px 15px 0 15px">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+    </button>
+    	
+	<a href="index.html">
+		<img style="width:250px; margin-left:30px" src="pict/logo_header.png">
+    </a>
+		
+	<div id="navbar" class="navbar-collapse collapse col-sm-1 col-sm-push-4">
+		<ul class="nav navbar-nav" style="margin-top:10px; margin-left:40px">
+			<li><a class="link-navbar" href="index.html">Headline</a></li>
+			<li><a class="link-navbar" href="berita.html">Repository</a></li>
+			<li><a class="link-navbar" href="tag.html">Tagged Word</a></li>
+			<li><a class="link-navbar" href="about.html">About</a></li>
+			<li><a class="link-navbar" href="help.html">Help</a></li>
+		</ul>
+	
+		<ul class="nav navbar-nav navbar-right col-sm-5 col-sm-pull-8" style="padding-top:15px">
+			<li><input type="text" id="cariBerita" onkeyup="filter()" placeholder="Telusuri"></li>
+		</ul>
+		
+		<ul class="nav navbar-nav navbar-right col-sm-2 col-sm-push-1" style="padding-top:15px">
+			<button class="btn btn-no-border" type="button">
+				<a href="rss.html" class="link-berita"><span class="fa fa-rss"><font class="teks-btn">&nbsp;RSS</font></span></a>
+			</button>
+			<button class="btn btn-no-border" type="button">
+				<a href="help.html" class="link-berita"><span class="fa fa-info"><font class="teks-btn">&nbsp;INFO</font></span></a>
+			</button>
+			<button id="userMenu" class="btn dropdown-toggle btn-no-border" type="button" data-toggle="dropdown">
+				<span class="fa fa-user"></span>&nbsp;
+				<span class="caret userButton"></span>
+			</button>
+			
+			<ul class="dropdown-menu" role="menu" aria-labelledby="userMenu">
+				<li role="presentation"><a href="#" tabindex="-1" role="menuitem">User</a></li>
+				<li role="presentation"><a href="#" tabindex="-1" role="menuitem">Profile</a></li>
+				<li role="presentation" class="divider"></li>
+				<li role="presentation"><a href="#" tabindex="-1" role="menuitem">Logout</a></li>
+			</ul>
+		</ul>
+	</div>
+ </div>
+<!-- Header End -->
+  
+<!-- Content Start -->
+<div class="container-fluid" style="margin-top:110px; margin-right:10px">
+	<div class="row">
+		<!-- Kolom Kiri -->
+		<div class="col-sm-2" style="position:relative; margin-top:23px">
+			<div class="sidebar">
+				<h5 style="color:#777; margin-left:20px">SUB-MENU</h5>
+					<a href="index.html"><button class="btn-sidenav"><i class="fa fa-bullhorn" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Berita Terbaru</font></i></button></a>
+					<br>
+					<a href="berita.html"><button class="btn-sidenav"><i class="fa fa-database" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Repository Berita</font></i></button></a>
+					<br>
+					<a href="link.html"><button class="btn-sidenav"><i class="fa fa-link" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Repository Sumber</font></i></button></a>
+					<br>
+					<a href="tag.html"><button class="btn-sidenav"><i class="fa fa-tag" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Tagged Word</font></i></button></a>
+					<br>
+					
+					<hr style="border-top: 3px solid #ccc; width:85%">
+					<a href="about.html"><button class="btn-sidenav"><i class="fa fa-user" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Tentang Kami</font></i></button></a>
+					<br>
+					<a href="help.html"><button class="btn-sidenav"><i class="fa fa-info" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp;&nbsp;&nbsp; Pusat Bantuan</font></i></button>
+					</a>
+					
+					<hr style="border-top: 3px solid #ccc; width:85%">
+					<a href="rss.html"><button class="btn-sidenav"><i class="fa fa-rss" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp;&nbsp; RSS</font></i></button></a>
+					<br>
+					<a href="feedback.html"><button class="btn-sidenav"><i class="fa fa-envelope" style="margin-left:10px; margin-right:10px; color:#777"><font class="teks-btn2">&nbsp;&nbsp; Feedback</font></i></button>
+					</a>
+			</div>			
+		</div>
+		<!-- Kolom Kiri -->
+		
+		<!-- Kolom Tengah -->
+		<div class="col-sm-7">
+			<h3 style="color:#000">&nbsp;&nbsp; Preview Berita
+			<p style="float:right">
+				<font size="3px">
+					<a href="index.html">	
+					<i class="fa fa-arrow-left link-berita" style="color:#3b78e7"></i>
+						Kembali
+					</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</font>
+			</p>
+			</h3>
+				<div class="panel-body box-panel" style="padding:20px">
+					<h4>Ngamuk Diminta Copot Jam Tangan, Ibu Ini Tampar Petugas Bandara Manado</h4>
+					<hr>
+					<h6>Sumber : Detik.com</h6>
+					<br>
+					<p class="p-no-select" style="text-align:left; line-height:2em">
+					Seorang calon <mark>penumpang wanita</mark> mengamuk saat diminta mencopot jam tangan miliknya saat melalui mesin X-ray di <mark>Bandara Sam Ratulangi</mark>, <mark>Manado</mark>. Padahal <mark>petugas Aviation Security Sam Ratulangi</mark> sudah memberikan peringatan kepada penumpang tersebut.			
+					</br></br>"Betul ada kejadian itu. <mark>Petugas Aviation Security</mark> sudah sesuai aturan surat keputusan/2765/XII/2010 terkait pemeriksaan keamanan penumpang, yakni Pasal 23, bahwa mantel jaket, jam tangan, harus melalui metal detector," kata <mark>Corporate Communication Dept. Head PT Angkasa Pura I</mark> <mark>Awaluddin</mark> saat dihubungi <mark>detikcom</mark>, Rabu (5/7/2017).					
+					</br></br>Menurut <mark>Awaluddin</mark>, <mark>penumpang</mark> itu merasa kesal karena diperingatkan oleh <mark>petugas</mark>. Mengamuknya <mark>penumpang wanita</mark> yang identitasnya belum diketahui itu terjadi pada pukul 07.46 WITA pagi tadi.		
+					</br></br>"Ini disampaikan kepada <mark>penumpang</mark> tersebut harus melepas jam tangan. Saat melalui metal detector berbunyi, personel kami perempuan karena pemeriksaan sudah sesuai prosedur perempuan. Beliau (penumpang) emosional, tidak terima," kata <mark>Awaluddin.</mark>
+					</br></br>Penumpang tersebut diketahui akan menaiki pesawat <mark>Batik Air</mark> menuju <mark>Jakarta</mark>. Sedangkan <mark>korban penamparan</mark> tidak melakukan pelaporan.
+					</br></br>"<mark>Korban</mark> saat ini tidak melakukan pelaporan karena di sisi ini kita hanya melakukan tugas. Kalau saya rasa, teman-teman sudah sesuai prosedur, emosional ibu itu sendiri memang kebanyakan sering kami hadapi," ujar dia.
+					</br></br>Dalam video yang beredar, <mark>penumpang</mark> yang mengenakan pakaian berwarna hitam itu berteriak saat berpapasan dengan <mark>petugas</mark>. <mark>Penumpang</mark> yang mengenakan kacamata hitam itu langsung menampar petugas wanita.
+					<hr>
+					<h6>Link : <font color="#3b78e7">https://news.detik.com/berita/d-3549288/ngamuk-diminta-copot-jam-tangan-ibu-ini-tampar-petugas-bandara-manado</font> </h6>
+					</p>
+					<hr>
+					<p>Tag : 
+						<mark id="mark2">Jakarta</mark>
+						<mark id="mark2">Manado</mark>
+						<mark id="mark2">Batik Air</mark>
+						<mark id="mark2">Bandara Sam Ratulangi</mark>
+					</p>
+				</div>
+			<br>
+			
+			<h3 style="color:#000">&nbsp;&nbsp;&nbsp;Berita Terkait</h3>
+				<div class="panel-body box-panel" style="padding:20px; margin-bottom:20px; height:100%">
+					<p><a href="result.html" class="judul-berita">Ngamuk Diminta Copot Jam Tangan, Ibu Ini Tampar Petugas Bandara Manado</a></p>	
+				</div>
+
+				<div class="panel-body box-panel" style="padding:20px; margin-bottom:20px; height:100%">
+					<p><a href="result.html" class="judul-berita">Ngamuk Diminta Copot Jam Tangan, Ibu Ini Tampar Petugas Bandara Manado</a></p>	
+				</div>
+				
+				<div class="panel-body box-panel" style="padding:20px; margin-bottom:20px; height:100%">
+					<p><a href="result.html" class="judul-berita">Ngamuk Diminta Copot Jam Tangan, Ibu Ini Tampar Petugas Bandara Manado</a></p>	
+				</div>
+			
+			
+			<!-- Footer Start -->
+			<div class="box" style="margin-top:40px;text-align:center">
+				<p>
+				<a href="index.html">Headline</a> -
+				<a href="berita.html">Repository</a> -
+				<a href="tag.html">Tagged Word</a> -
+				<a href="about.html">About</a> -
+				<a href="help.html">Help</a>
+				</p>
+			</div>
+			<div class="box" style="text-align:center">
+				<p style="color:#777"><b>Entity Determiner</b> by Husain Abdul Aziz 
+				<br>Universitas AMIKOM Yogyakarta<br>
+				<a href="mailto:zhiezzpct@gmail.com"><i class="fa fa-envelope"></i>&nbsp;&nbspContact Me</a></p>
+			</div>
+			<!-- Footer End -->	
+		</div>
+		<!-- Kolom Tengah -->
+		
+		<div class="col-sm-3">
+			<h3 style="color:#000">&nbsp;&nbsp; Entitas Berita</h3>
+				<div class="panel-body box-panel" style="padding:20px">
+					<table class="table table-hover">
+						<thead>
+						  <tr>
+							<th>No</th>
+							<th>Entitas</th>
+							<th>Tag</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td>1</td>
+							<td>Penumpang wanita</td>
+							<td>People</td>
+						  </tr>
+						  <tr>
+							<td>2</td>
+							<td>Bandara Sam Ratulangi</td>
+							<td>Place</td>
+						  </tr>
+						  <tr>
+							<td>3</td>
+							<td>Manado</td>
+							<td>Place</td>
+						  </tr>
+						  <tr>
+							<td>4</td>
+							<td>Petugas Aviation Security</td>
+							<td>People</td>
+						  </tr>
+						  <tr>
+							<td>5</td>
+							<td>Corporate Communication Dept. Head PT Angkasa Pura I</td>
+							<td>Other</td>
+						  </tr>
+						  <tr>
+							<td>7</td>
+							<td>Awaludin</td>
+							<td>People</td>
+						  </tr>
+						  <tr>
+							<td>8</td>
+							<td>Penumpang</td>
+							<td>Other</td>
+						  </tr>
+						  <tr>
+							<td>9</td>
+							<td>Petugas</td>
+							<td>Other</td>
+						  </tr>
+						  <tr>
+							<td>10</td>
+							<td>Batik Air</td>
+							<td>Product</td>
+						  </tr>
+						  <tr>
+							<td>11</td>
+							<td>Jakarta</td>
+							<td>Place</td>
+						  </tr>
+						  <tr>
+							<td>12</td>
+							<td>Korban penamparan</td>
+							<td>Other</td>
+						  </tr>
+						</tbody>
+					</table>
+				</div>
+		</div>
+	</div>
+
+<!-- Need -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<script>
+	$(document).ready(function() {
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 500) {
+				$('.move-top').fadeIn();
+			} else {
+				$('.move-top').fadeOut();
+			}
+		});
+
+		$('.move-top').click(function() {
+			$("html, body").animate({
+				scrollTop: 0
+			}, 600);
+		return false;
+		});
+	});
+	</script>
+<!-- Need -->
+</body>
+</html>
